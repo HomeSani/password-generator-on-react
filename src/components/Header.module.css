@@ -1,0 +1,19 @@
+.header {
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 56px;
+    font-weight: 700;
+
+    color: #ffcb36;
+}
+
+.header p {
+    font-size: 24px;
+    font-weight: 400;
+
+    color: #f7f7f7;
+
+    margin-top: 5px;
+}
