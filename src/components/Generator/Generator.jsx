@@ -1,7 +1,17 @@
 import React from "react";
+
 import style from "./Generator.module.css";
+import Checkbox from "./Checkbox";
 
 function Generator() {
+    const [length, setLength] = React.useState(8);
+
+    const checkboxes = ["Uppercase", "Lowercase", "Number", "Symbols"];
+
+    const handleSlider = (event) => {
+        setLength(event.target.value);
+    };
+
     return (
         <div className={style.generator}>
             <input
@@ -14,27 +24,20 @@ function Generator() {
                 <div className={style.slider}>
                     <label>
                         Password length
-                        <input type="range" min={6} max={100} />
-                        <span>100</span>
+                        <input
+                            type="range"
+                            min={6}
+                            max={100}
+                            value={length}
+                            onChange={(event) => handleSlider(event)}
+                        />
+                        <span>{length}</span>
                     </label>
                 </div>
                 <div className={style.checkers}>
-                    <label>
-                        Uppercase
-                        <input type="checkbox" />
-                    </label>
-                    <label>
-                        Lowercase
-                        <input type="checkbox" />
-                    </label>
-                    <label>
-                        Numbers
-                        <input type="checkbox" />
-                    </label>
-                    <label>
-                        Symbols
-                        <input type="checkbox" />
-                    </label>
+                    {checkboxes.map((checkbox) => (
+                        <Checkbox key={checkbox} name={checkbox} />
+                    ))}
                 </div>
             </div>
             <button>Generate Password</button>

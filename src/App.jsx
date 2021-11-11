@@ -1,6 +1,8 @@
+import React from "react";
+
 import style from "./App.module.css";
 import Header from "./components/Header";
-import Generator from "./components/Generator";
+import Generator from "./components/Generator/Generator";
 
 function App() {
     return (
